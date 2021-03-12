@@ -1,13 +1,13 @@
-import splitbee from "@splitbee/web";
 import { validateNif } from "../lib";
+const { SplitbeeAnalytics } = require("@splitbee/node");
+const analytics = new SplitbeeAnalytics("DUVYHEBZOVJ6");
 
 module.exports = (req, res) => {
-  splitbee.init();
-
   if (req.method === "GET") {
     const { q } = req.query;
 
-    splitbee.track("Query", {
+    analytics.track({
+      event: "Query",
       query: q,
     });
 
@@ -21,8 +21,8 @@ module.exports = (req, res) => {
     data = data?.data;
 
     if (data) {
-      console.log("data->" + data);
-      splitbee.track("POST", {
+      analytics.track({
+        event: "POST",
         data: data,
       });
 

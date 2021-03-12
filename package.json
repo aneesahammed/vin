@@ -20,6 +20,6 @@
     "@vercel/node": "^1.9.1"
   },
   "dependencies": {
-    "@splitbee/web": "^0.2.4"
+    "@splitbee/node": "^0.1.8"
   }
 }
