@@ -3,9 +3,10 @@ import { validateNif } from "../lib";
 module.exports = (req, res) => {
   if (req.method === "GET") {
     const { q } = req.query;
-    return res.status(200).json({
-      q,
-    });
+
+    let obj = {};
+    obj[q] = validateNif(q);
+    return res.status(200).json(obj);
   } else if (req.method === "POST") {
     let data = req.body;
     data = data.data;
