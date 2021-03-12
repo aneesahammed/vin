@@ -8,7 +8,6 @@ module.exports = (req, res) => {
 
     analytics.track({
       event: "Query",
-      query: q,
     });
 
     if (q) {
@@ -23,7 +22,6 @@ module.exports = (req, res) => {
     if (data) {
       analytics.track({
         event: "POST",
-        data: data,
       });
 
       let obj = {};
