@@ -1,0 +1,22 @@
+{
+  "name": "vin",
+  "version": "1.0.0",
+  "description": "Validates Polish VAT Identification Number",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aneesahammed/Vin.git"
+  },
+  "author": "Anees Ahammed",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aneesahammed/Vin/issues"
+  },
+  "homepage": "https://github.com/aneesahammed/Vin#readme",
+  "devDependencies": {
+    "@vercel/node": "^1.9.1"
+  }
+}
