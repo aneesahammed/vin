@@ -4,9 +4,11 @@ module.exports = (req, res) => {
   if (req.method === "GET") {
     const { q } = req.query;
 
-    let obj = {};
-    obj[q] = validateNif(q);
-    return res.status(200).json(obj);
+    if (q) {
+      let obj = {};
+      obj[q] = validateNif(q);
+      return res.status(200).json(obj);
+    } else return res.status(200).json("Hello World!");
   } else if (req.method === "POST") {
     let data = req.body;
     data = data.data;
