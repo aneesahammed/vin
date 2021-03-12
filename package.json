@@ -18,5 +18,8 @@
   "homepage": "https://github.com/aneesahammed/Vin#readme",
   "devDependencies": {
     "@vercel/node": "^1.9.1"
+  },
+  "dependencies": {
+    "@splitbee/web": "^0.2.4"
   }
 }
