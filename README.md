@@ -1,4 +1,3 @@
-# Vin
 <h1 align="center">Vin</h1>
 
 > Serverless function deployed in vercel to validates Polish VAT Identification Number.
