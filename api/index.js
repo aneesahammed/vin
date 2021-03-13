@@ -1,13 +1,20 @@
 import { validateNif } from "../lib";
-const { SplitbeeAnalytics } = require("@splitbee/node");
-const analytics = new SplitbeeAnalytics("DUVYHEBZOVJ6");
+import { splitbeeInit } from "../lib/splitbee";
+
+const analytics = splitbeeInit();
 
 module.exports = (req, res) => {
   if (req.method === "GET") {
     const { q } = req.query;
 
-    analytics.track({
+    console.log(analytics);
+
+    analytics?.track({
+      userId: "anon",
       event: "Query",
+      data: {
+        query: q,
+      },
     });
 
     if (q) {
@@ -19,11 +26,15 @@ module.exports = (req, res) => {
     let data = req.body;
     data = data?.data;
 
-    if (data) {
-      analytics.track({
-        event: "POST",
-      });
+    analytics?.track({
+      userId: "anon",
+      event: "POST",
+      data: {
+        input: data,
+      },
+    });
 
+    if (data) {
       let obj = {};
       data.forEach((item) => {
         obj[item] = validateNif(item);
