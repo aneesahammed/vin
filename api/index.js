@@ -7,7 +7,11 @@ module.exports = (req, res) => {
   if (req.method === "GET") {
     const { q } = req.query;
 
-    console.log(analytics);
+    console.log(
+      `Token::${process.env.SPLITBEE_TOKEN}\nAnalytics::${JSON.stringify(
+        analytics
+      )}`
+    );
 
     analytics?.track({
       userId: "anon",
