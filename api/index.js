@@ -27,9 +27,6 @@ module.exports = (req, res) => {
     analytics?.track({
       userId: "anon",
       event: "POST",
-      data: {
-        input: data,
-      },
     });
 
     if (data) {
